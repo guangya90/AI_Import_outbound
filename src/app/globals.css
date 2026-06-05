@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-50: #e8fafa;
+  --brand-100: #d0f3f2;
+  --brand-200: #b5e8e8;
+  --brand-300: #7fd9d7;
+  --brand-400: #3fc8c5;
+  --brand-500: #0fc6c2;
+  --brand-600: #0bada9;
+  --brand-700: #0b6e6e;
+}
+
+html, body {
+  background: #f7f8fa;
+  color: #1d2129;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium text-sm transition-all;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600 disabled:bg-gray-300 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-brand-700 border border-brand-300 hover:bg-brand-50;
+  }
+  .btn-ghost {
+    @apply btn text-gray-600 hover:bg-gray-100;
+  }
+  .btn-danger {
+    @apply btn bg-red-500 text-white hover:bg-red-600;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-card p-5;
+  }
+  .input {
+    @apply w-full px-3 py-2 border border-gray-200 rounded-md text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500;
+  }
+  .label {
+    @apply text-sm text-gray-600 mb-1 block;
+  }
+  .tag {
+    @apply inline-block bg-brand-50 text-brand-700 text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .tag-red {
+    @apply bg-red-50 text-red-600;
+  }
+  .tag-orange {
+    @apply bg-orange-50 text-orange-600;
+  }
+  .table-container {
+    @apply overflow-auto border border-gray-200 rounded-lg bg-white;
+  }
+  .table-container table {
+    @apply w-full text-sm;
+  }
+  .table-container th {
+    @apply bg-brand-50 text-brand-700 font-semibold px-3 py-2 text-left whitespace-nowrap sticky top-0;
+  }
+  .table-container td {
+    @apply px-3 py-2 border-t border-gray-100;
+  }
+  .table-container tr:hover td {
+    @apply bg-brand-50/30;
+  }
+}
+
+/* 编辑表格中的 input */
+.cell-input {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.cell-input:focus, .cell-input:hover {
+  border-color: #0fc6c2;
+  background: #fff;
+}
+.cell-input.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+/* 进度条 */
+.progress-bar {
+  height: 8px;
+  background: #e8fafa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0fc6c2 0%, #3fc8c5 100%);
+  transition: width 0.3s;
+}
+
+/* 加载动画 */
+.spinner {
+  border: 2px solid #e8fafa;
+  border-top-color: #0fc6c2;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

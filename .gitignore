@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.log
+dev-stderr.log
+dev-stdout.log
+.vercel
+dist
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+pdf-out.txt
