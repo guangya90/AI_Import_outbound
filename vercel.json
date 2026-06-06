@@ -4,13 +4,6 @@
   "devCommand": "next dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["hnd1", "sin1"],
-  "env": {
-    "DATABASE_URL": {
-      "description": "Neon Postgres connection string"
-    },
-    "DEEPSEEK_API_KEY": {
-      "description": "DeepSeek API Key (用于 AI 辅助生成规则)"
-    }
-  }
+  "regions": ["hnd1", "sin1"]
 }
+
